@@ -113,7 +113,7 @@ window.AHID_POLICY_DATA = {
       blocks: [
         {
           type: "paragraph",
-          text: "The App is not directed at children under the age of 13 (or 16 in certain jurisdictions). We do not knowingly collect personal information from children. If we learn that we have inadvertently collected data from a child under the applicable minimum age, we will promptly delete that information. If you believe we have collected information from a minor, please contact us immediately at [official email].",
+          text: "The App is not directed at children under the age of 13 (or 16 in certain jurisdictions). We do not knowingly collect personal information from children. If we learn that we have inadvertently collected data from a child under the applicable minimum age, we will promptly delete that information. If you believe we have collected information from a minor, please contact us immediately at protontechnologies63@gmail.com",
         },
       ],
     },
@@ -191,7 +191,7 @@ window.AHID_POLICY_DATA = {
         },
         {
           type: "paragraph",
-          text: "Company: [Your Company Name]\nEmail: protontechnologies63@gmail.com\nAddress: San Lorenzo Str, Opp Baptist school Junction, Obinze, Imo State, Nigeria\nWebsite: ahid.io",
+          text: "Company: Ahid\nEmail: protontechnologies63@gmail.com\nAddress: San Lorenzo Str, Opp Baptist school Junction, Obinze, Imo State, Nigeria\nWebsite: ahid.io",
         },
         {
           type: "paragraph",
