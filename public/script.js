@@ -7,6 +7,9 @@ const policyTitle = document.getElementById("policy-title");
 const policyMeta = document.getElementById("policy-meta");
 const policyIntro = document.getElementById("policy-intro");
 const policyContainer = document.getElementById("policy-content");
+const navWrap = document.querySelector(".nav-wrap");
+const navToggle = document.querySelector(".nav-toggle");
+const navBackdrop = document.querySelector(".nav-backdrop");
 
 const featureContent = {
   users: {
@@ -131,6 +134,43 @@ function setupFaqAccordion() {
   });
 }
 
+function setupMobileNavigation() {
+  if (!navWrap || !navToggle) {
+    return;
+  }
+
+  const navLinks = navWrap.querySelectorAll("nav a");
+  const closeMenu = () => {
+    navWrap.classList.remove("nav-open");
+    navToggle.setAttribute("aria-expanded", "false");
+    navToggle.setAttribute("aria-label", "Open navigation menu");
+    document.body.classList.remove("nav-locked");
+  };
+
+  navToggle.addEventListener("click", () => {
+    const isOpen = navWrap.classList.toggle("nav-open");
+    navToggle.setAttribute("aria-expanded", String(isOpen));
+    navToggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+    document.body.classList.toggle("nav-locked", isOpen);
+  });
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      closeMenu();
+    });
+  });
+
+  if (navBackdrop) {
+    navBackdrop.addEventListener("click", closeMenu);
+  }
+
+  document.addEventListener("click", (event) => {
+    if (!navWrap.contains(event.target)) {
+      closeMenu();
+    }
+  });
+}
+
 if (featureTitle && featureList && featureButtons.length) {
   featureButtons.forEach((button) => {
     button.addEventListener("click", () => setFeature(button.dataset.feature));
@@ -156,3 +196,4 @@ if (newsletterForm && newsletterEmail) {
 
 renderPrivacyPolicy();
 setupFaqAccordion();
+setupMobileNavigation();

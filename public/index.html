@@ -27,12 +27,24 @@
         <div class="brand">
           <img src="./assets/ahid_logo.png" width="70" alt="Ahid Logo" />
         </div>
-        <nav aria-label="Primary">
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+          aria-label="Open navigation menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav id="primary-nav" aria-label="Primary">
           <a href="#about">About us</a>
           <a href="#features">Features</a>
           <a href="#faq">FAQ</a>
           <a href="/privacy-policy.html">Privacy Policy</a>
         </nav>
+        <div class="nav-backdrop" aria-hidden="true"></div>
         <a href="#contact" class="cta-chip">Contact us</a>
       </header>
 
