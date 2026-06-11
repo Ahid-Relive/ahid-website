@@ -1013,7 +1013,6 @@ input {
     linear-gradient(180deg, var(--policy-bg) 0%, #fafbfa 100%);
   min-height: 100vh;
   color: #173e36;
-  padding-bottom: 3rem;
 }
 
 .policy-header {
