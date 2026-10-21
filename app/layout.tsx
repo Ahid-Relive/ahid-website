@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     canonical: siteUrl,
   },
   icons: {
-    icon: "/assets/ahid_logo.png",
+    icon: "/assets/favicon.png",
     apple: "/assets/ahid_logo.png",
   },
 };
