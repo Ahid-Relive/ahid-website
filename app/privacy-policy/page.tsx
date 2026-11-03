@@ -1,26 +1,12 @@
 import type { Metadata } from "next";
 import PolicyShell from "@/components/PolicyShell";
+import { buildMetadata, pages } from "@/lib/seo";
 
 import { policyData } from "./data";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description:
-    "Learn how Ahid collects, uses, and protects your personal data. Read our full privacy policy.",
-  openGraph: {
-    title: "Privacy Policy | Ahid",
-    description:
-      "Learn how Ahid collects, uses, and protects your personal data.",
-    url: "https://ahid.app/privacy-policy",
-  },
-  alternates: {
-    canonical: "https://ahid.app/privacy-policy",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
+export function generateMetadata(): Metadata {
+  return buildMetadata(pages.privacy);
+}
 
 export default function PrivacyPolicyPage() {
   return (

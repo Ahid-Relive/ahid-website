@@ -6,21 +6,53 @@ import FeatureTabs from "@/components/FeatureTabs";
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeader from "@/components/SiteHeader";
 import { AppleLogo, PlayLogo } from "@/components/StoreLogos";
-import { PLAY_STORE_URL } from "@/lib/constants";
+import JsonLd from "@/components/JsonLd";
+import { PLAY_STORE_URL, SITE_URL } from "@/lib/constants";
+import { faqs } from "@/lib/faq";
+import { SITE_NAME, absoluteUrl, buildMetadata, pages } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Ahid — Discover Trusted Local Brands",
-  description:
-    "Ahid helps you find nearby products and services from verified businesses, making discovery faster and safer. Join 10k+ users today.",
-  openGraph: {
-    title: "Ahid — Discover Trusted Local Brands",
-    description:
-      "Find nearby products and services from verified businesses. Download Ahid today.",
-    url: "https://ahid.app",
-  },
-  alternates: {
-    canonical: "https://ahid.app",
-  },
+export function generateMetadata(): Metadata {
+  return buildMetadata(pages.home);
+}
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: SITE_NAME,
+      url: SITE_URL,
+      logo: absoluteUrl("/assets/ahid_logo.png"),
+      email: "support@ahid.io",
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: SITE_NAME,
+      description: pages.home.description,
+      publisher: { "@id": `${SITE_URL}/#organization` },
+    },
+    {
+      "@type": "MobileApplication",
+      name: SITE_NAME,
+      description: pages.home.description,
+      applicationCategory: "ShoppingApplication",
+      operatingSystem: "Android",
+      downloadUrl: PLAY_STORE_URL,
+      image: absoluteUrl("/opengraph-image"),
+      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqs.map((item) => ({
+        "@type": "Question",
+        name: item.q,
+        acceptedAnswer: { "@type": "Answer", text: item.a },
+      })),
+    },
+  ],
 };
 
 const screens = [
@@ -75,6 +107,7 @@ function Phone({ src, alt = "", priority = false }: { src: string; alt?: string;
 export default function Page() {
   return (
     <main>
+      <JsonLd data={structuredData} />
       <SiteHeader />
 
       <section className="shell hero">

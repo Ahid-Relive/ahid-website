@@ -2,13 +2,7 @@
 
 import { useState } from "react";
 
-const faqs = [
-  { q: "What is Ahid?", a: "Ahid is a platform that connects people with trusted local brands and businesses." },
-  { q: "How does brand verification work?", a: "Each listed brand goes through identity and trust checks before receiving a badge." },
-  { q: "What makes Ahid different from other platforms?", a: "We combine locality, trust verification, and a curated discovery experience." },
-  { q: "Can I buy products or services directly on Ahid?", a: "You can explore offerings, connect with brands, and complete actions through brand channels." },
-  { q: "How do I add my brand to Ahid?", a: "Download the app and Signup as a brand." },
-];
+import { faqs } from "@/lib/faq";
 
 export default function Faq() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);

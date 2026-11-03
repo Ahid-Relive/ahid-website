@@ -1,25 +1,11 @@
 import type { Metadata } from "next";
 
 import PolicyShell from "@/components/PolicyShell";
+import { buildMetadata, pages } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Child Safety Standards",
-  description:
-    "Ahid's published standards against child sexual abuse and exploitation (CSAE). Learn how we protect children and report harmful content on our platform.",
-  openGraph: {
-    title: "Child Safety Standards | Ahid",
-    description:
-      "Ahid has zero tolerance for CSAE. Read our published child safety standards, reporting mechanisms, and enforcement procedures.",
-    url: "https://ahid.app/child-safety",
-  },
-  alternates: {
-    canonical: "https://ahid.app/child-safety",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
+export function generateMetadata(): Metadata {
+  return buildMetadata(pages.childSafety);
+}
 
 export default function ChildSafetyPage() {
   return (
