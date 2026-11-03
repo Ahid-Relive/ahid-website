@@ -731,11 +731,49 @@ h2 {
   text-align: center;
 }
 
-.showcase {
-  gap: clamp(1.5rem, 4vw, 3rem);
+.marquee {
+  overflow: hidden;
+  padding-block: 1.5rem;
+  margin-top: 1rem;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 45s linear infinite;
+}
+
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track,
+.marquee:active .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Four identical copies of the cards: moving by half the track loops seamlessly. */
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    overflow-x: auto;
+  }
+
+  .marquee-track {
+    animation: none;
+  }
+
+  .marquee-track .showcase-item[aria-hidden] {
+    display: none;
+  }
 }
 
 .showcase-item {
+  flex: 0 0 auto;
+  width: clamp(240px, 26vw, 300px);
+  padding-inline: clamp(0.75rem, 2vw, 1.5rem);
   text-align: center;
 }
 
@@ -803,9 +841,6 @@ h2 {
     gap: 2rem;
   }
 
-  .showcase {
-    gap: 3rem;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

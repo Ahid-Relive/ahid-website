@@ -135,24 +135,32 @@ export default function Page() {
         </div>
       </section>
 
-      <section id="about" className="shell">
-        <div className="section-head center">
+      <section id="about">
+        <div className="shell section-head center">
           <p className="eyebrow">What Ahid does</p>
           <h2>One app for discovering, and being discovered</h2>
           <p>
-            Customers find nearby brands they can rely on.
+            Customers find nearby products and services they can rely on.
             Businesses get a trusted profile and visibility with people
             searching in their area.
           </p>
         </div>
-        <div className="grid grid-3 showcase">
-          {screens.map((screen) => (
-            <article key={screen.title} className="showcase-item">
-              <Phone src={screen.src} />
-              <h3>{screen.title}</h3>
-              <p>{screen.text}</p>
-            </article>
-          ))}
+        <div className="marquee" aria-label="Ahid app screens">
+          <div className="marquee-track">
+            {[0, 1, 2, 3].flatMap((copy) =>
+              screens.map((screen) => (
+                <article
+                  key={`${copy}-${screen.title}`}
+                  className="showcase-item"
+                  aria-hidden={copy > 0 || undefined}
+                >
+                  <Phone src={screen.src} />
+                  <h3>{screen.title}</h3>
+                  <p>{screen.text}</p>
+                </article>
+              )),
+            )}
+          </div>
         </div>
       </section>
 
