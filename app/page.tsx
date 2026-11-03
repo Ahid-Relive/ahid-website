@@ -140,7 +140,7 @@ export default function Page() {
           <p className="eyebrow">What Ahid does</p>
           <h2>One app for discovering, and being discovered</h2>
           <p>
-            Customers find nearby products and services they can rely on.
+            Customers find nearby brands they can rely on.
             Businesses get a trusted profile and visibility with people
             searching in their area.
           </p>
