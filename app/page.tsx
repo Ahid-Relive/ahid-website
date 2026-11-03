@@ -96,10 +96,10 @@ function StoreButtons() {
   );
 }
 
-function Phone({ src, alt = "", priority = false }: { src: string; alt?: string; priority?: boolean }) {
+function Phone({ src, alt = "", priority = false, eager = false }: { src: string; alt?: string; priority?: boolean; eager?: boolean }) {
   return (
     <div className="phone">
-      <Image src={src} alt={alt} width={1572} height={3408} priority={priority} />
+      <Image src={src} alt={alt} width={1572} height={3408} priority={priority} loading={eager ? "eager" : undefined} />
     </div>
   );
 }
@@ -154,7 +154,7 @@ export default function Page() {
                   className="showcase-item"
                   aria-hidden={copy > 0 || undefined}
                 >
-                  <Phone src={screen.src} />
+                  <Phone src={screen.src} eager />
                   <h3>{screen.title}</h3>
                   <p>{screen.text}</p>
                 </article>
