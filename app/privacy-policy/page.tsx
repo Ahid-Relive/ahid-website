@@ -33,7 +33,6 @@ export default function PrivacyPolicyPage() {
           {paragraph}
         </p>
       ))}
-      footer={false}
     >
       {policyData.sections.map((section) => (
         <section key={section.heading} className="policy-section">

@@ -91,7 +91,7 @@ export default function AccountDeletionPage() {
           <div className="contact-block">
             <p><strong>Ahid Support</strong></p>
             <p>
-              Email:
+              Email:{" "}
               <a href="mailto:support@ahid.io">support@ahid.io</a>
             </p>
           </div>

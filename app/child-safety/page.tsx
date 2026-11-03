@@ -86,11 +86,10 @@ export default function ChildSafetyPage() {
               Preserve relevant evidence in accordance with applicable law.
             </li>
             <li>
-              Report confirmed CSAM to the
-              <strong
-                >National Center for Missing and Exploited Children
-                (NCMEC)</strong
-              >
+              Report confirmed CSAM to the{" "}
+              <strong>
+                National Center for Missing and Exploited Children (NCMEC)
+              </strong>{" "}
               CyberTipline and/or the relevant regional authority in the
               jurisdiction concerned.
             </li>
@@ -110,14 +109,14 @@ export default function ChildSafetyPage() {
           <ol>
             <li>Open the Ahid mobile application.</li>
             <li>
-              Navigate to the content or profile you wish to report and tap the
+              Navigate to the content or profile you wish to report and tap the{" "}
               <strong>Report</strong> option.
             </li>
             <li>Select the category that best describes your concern.</li>
             <li>Submit the report — our team will review it promptly.</li>
           </ol>
           <p>
-            You may also report concerns directly by email at
+            You may also report concerns directly by email at{" "}
             <a href="mailto:support@ahid.io">support@ahid.io</a>. All reports
             are treated confidentially.
           </p>
@@ -159,14 +158,14 @@ export default function ChildSafetyPage() {
           <div className="contact-block">
             <p><strong>Child Safety Contact — Ahid</strong></p>
             <p>
-              Email:
+              Email:{" "}
               <a href="mailto:support@ahid.io">support@ahid.io</a>
             </p>
           </div>
           <p>
             If you believe a child is in immediate danger, please contact your
             local law-enforcement agency immediately. You can also find child
-            safety organisations in your country at
+            safety organisations in your country at{" "}
             <a
               href="https://www.missingkids.org"
               target="_blank"

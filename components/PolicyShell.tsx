@@ -7,29 +7,27 @@ export default function PolicyShell({
   meta,
   hero,
   children,
-  footer = true,
 }: {
   pill: string;
   title: string;
   meta: string;
   hero?: React.ReactNode;
   children: React.ReactNode;
-  footer?: boolean;
 }) {
   return (
-    <main className="policy-page">
+    <main>
       <SiteHeader />
 
-      <section className="shell policy-hero reveal-up">
-        <p className="pill">{pill}</p>
+      <section className="shell policy-hero">
+        <p className="eyebrow">{pill}</p>
         <h1>{title}</h1>
         <p className="policy-meta">{meta}</p>
         {hero}
       </section>
 
-      <article className="shell policy-card reveal-up">{children}</article>
+      <article className="shell policy-card">{children}</article>
 
-      {footer && <SiteFooter />}
+      <SiteFooter />
     </main>
   );
 }
