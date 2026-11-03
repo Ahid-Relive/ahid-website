@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
+import ThemeToggle from "./ThemeToggle";
+
 const links = [
   { href: "/#about", label: "About" },
   { href: "/#how", label: "How it works" },
@@ -40,17 +42,20 @@ export default function SiteHeader() {
           </Link>
         </nav>
 
-        <button
-          type="button"
-          className="nav-toggle"
-          aria-expanded={open}
-          aria-controls="primary-nav"
-          aria-label={open ? "Close menu" : "Open menu"}
-          onClick={() => setOpen((value) => !value)}
-        >
-          <span></span>
-          <span></span>
-        </button>
+        <div className="header-actions">
+          <ThemeToggle />
+          <button
+            type="button"
+            className="nav-toggle"
+            aria-expanded={open}
+            aria-controls="primary-nav"
+            aria-label={open ? "Close menu" : "Open menu"}
+            onClick={() => setOpen((value) => !value)}
+          >
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </div>
     </header>
   );
