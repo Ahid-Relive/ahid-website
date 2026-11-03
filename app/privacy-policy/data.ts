@@ -1,4 +1,19 @@
-window.AHID_POLICY_DATA = {
+export type PolicyBlock =
+  | { type: "subheading"; text: string }
+  | { type: "paragraph"; text: string }
+  | { type: "list"; items: string[] };
+
+export type PolicySection = { heading: string; blocks: PolicyBlock[] };
+
+export type PolicyData = {
+  title: string;
+  effectiveDate: string;
+  lastUpdated: string;
+  intro: string[];
+  sections: PolicySection[];
+};
+
+export const policyData: PolicyData = {
   title: "Ahid Privacy Policy",
   effectiveDate: "10/06/2026",
   lastUpdated: "11/06/2026",
