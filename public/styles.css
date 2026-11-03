@@ -1701,3 +1701,47 @@ input {
     font-size: 0.78rem;
   }
 }
+
+.cta-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 1.2rem;
+}
+
+.cta-row .btn-primary,
+.feature-card .cta-row .btn-primary {
+  margin-top: 0;
+}
+
+.btn-soon {
+  border-radius: 0.8rem;
+  padding: 0.85rem 1.4rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #eef2ef;
+  color: #6b7f77;
+  border: 2px dashed #cfd9d3;
+  cursor: not-allowed;
+  user-select: none;
+}
+
+.btn-soon .badge {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: #0f3e37;
+  color: #ffffff;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+}
+
+.store-logo {
+  width: 1.3rem;
+  height: 1.3rem;
+  flex-shrink: 0;
+}
