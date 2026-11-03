@@ -145,7 +145,7 @@ export default function Page() {
             searching in their area.
           </p>
         </div>
-        <div className="marquee" aria-label="Ahid app screens">
+        <div className="shell marquee" aria-label="Ahid app screens">
           <div className="marquee-track">
             {[0, 1, 2, 3].flatMap((copy) =>
               screens.map((screen) => (

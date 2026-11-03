@@ -735,6 +735,8 @@ h2 {
   overflow: hidden;
   padding-block: 1.5rem;
   margin-top: 1rem;
+  /* Soft edges so cards slide in and out instead of being cut off. */
+  mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
 }
 
 .marquee-track {
@@ -772,9 +774,16 @@ h2 {
 
 .showcase-item {
   flex: 0 0 auto;
-  width: clamp(240px, 26vw, 300px);
-  padding-inline: clamp(0.75rem, 2vw, 1.5rem);
+  width: clamp(240px, 70vw, 300px);
+  padding-inline: 1rem;
   text-align: center;
+}
+
+/* Desktop: exactly three cards fit the row, so no card repeats within one view. */
+@media (min-width: 860px) {
+  .showcase-item {
+    width: calc(min(1120px, 100vw - 2.5rem) / 3);
+  }
 }
 
 .showcase-item .phone {
