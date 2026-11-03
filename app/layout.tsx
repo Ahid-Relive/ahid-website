@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Manrope, Plus_Jakarta_Sans } from "next/font/google";
 import { SITE_URL } from "@/lib/constants";
-import { KEYWORDS, SITE_NAME, pages } from "@/lib/seo";
+import { KEYWORDS, OG_IMAGE, SITE_NAME, pages } from "@/lib/seo";
 
 import "./globals.css";
 
@@ -31,6 +31,20 @@ export const metadata: Metadata = {
   publisher: SITE_NAME,
   category: "shopping",
   formatDetection: { telephone: false, email: false, address: false },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    siteName: SITE_NAME,
+    title: pages.home.title,
+    description: pages.home.description,
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: pages.home.title,
+    description: pages.home.description,
+    images: [OG_IMAGE.url],
+  },
   robots: {
     index: true,
     follow: true,
