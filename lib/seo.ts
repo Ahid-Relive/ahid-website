@@ -51,6 +51,16 @@ export const pages = {
     priority: 1,
     changeFrequency: "weekly",
   },
+  support: {
+    title: "Support & Help Center",
+    description:
+      "Need help with Ahid? Send our support team a message and we'll open a ticket and reply by email within 24 hours. Questions, ideas and bug reports welcome.",
+    path: "/support",
+    keywords: ["Ahid support", "Ahid help", "contact Ahid"],
+    lastModified: "2026-11-05",
+    priority: 0.6,
+    changeFrequency: "monthly",
+  },
   privacy: {
     title: "Privacy Policy",
     description:

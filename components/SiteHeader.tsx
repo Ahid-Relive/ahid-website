@@ -11,6 +11,7 @@ const links = [
   { href: "/#how", label: "How it works" },
   { href: "/#features", label: "Features" },
   { href: "/#faq", label: "FAQ" },
+  { href: "/support", label: "Support" },
 ];
 
 export default function SiteHeader() {
